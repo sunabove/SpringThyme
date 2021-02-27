@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class MyController {
-	@GetMapping("/hello.html")
+	@GetMapping("/myHello.html")
 	public String hello(Model model, @RequestParam(value = "name", defaultValue = "World") String name) {
 		var tasks = Arrays.asList("a", "b", "c", "d", "e", "f", "g");
 		
@@ -16,6 +16,6 @@ public class MyController {
 		model.addAttribute("name", name);
 		model.addAttribute("tasks", tasks);
 		
-		return "NewFile.html";
+		return "myHello.html";
 	}
 }

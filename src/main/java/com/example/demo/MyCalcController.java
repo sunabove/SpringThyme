@@ -69,7 +69,7 @@ public class MyCalcController {
 		
 		model.addAttribute("errMsg", errMsg);
 		
-		return "MyCalc.html";
+		return "myCalc.html";
 	}
 
 }

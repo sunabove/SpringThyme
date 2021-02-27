@@ -9,7 +9,7 @@ import org.thymeleaf.templateresolver.AbstractConfigurableTemplateResolver;
 import org.thymeleaf.templateresolver.ClassLoaderTemplateResolver;
 import org.thymeleaf.templateresolver.FileTemplateResolver;
 
-@Configuration
+//@Configuration
 public class ThymeLeafConfig implements WebMvcConfigurer {
 
     public ThymeLeafConfig() {
@@ -24,12 +24,16 @@ public class ThymeLeafConfig implements WebMvcConfigurer {
     	externalFolder = "";
     	
     	if( externalFolder.length() < 1 ) {
+    		// Internal Folder
     		templateResolver = new ClassLoaderTemplateResolver();
-    	} else if ( ! externalFolder.endsWith( "/")  ) {
-    		externalFolder += "/" ; 
+    	} else {
+    		if( ! externalFolder.endsWith( "/")  ) {    	
+    			externalFolder += "/" ; 
+    		}
+    		
+    		templateResolver.setPrefix( externalFolder );
     	}
 
-        templateResolver.setPrefix( externalFolder );
         //templateResolver.setSuffix(".html");
         // templateResolver.setTemplateMode("HTML5");
         templateResolver.setTemplateMode("HTML");
