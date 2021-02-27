@@ -14,7 +14,7 @@ import lombok.extern.slf4j.Slf4j;
 public class MyCalcController {
 	@Autowired MyCalcRepository repository;
 	
-	@GetMapping("/myCalc")
+	@GetMapping("/myCalc.html")
 	public String myCalcModel(Model model, @ModelAttribute MyCalc myCalc) {
 		
 		String errMsg = "";

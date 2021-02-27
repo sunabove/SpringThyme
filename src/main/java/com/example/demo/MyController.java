@@ -8,7 +8,7 @@ import org.springframework.web.bind.annotation.*;
 
 @Controller
 public class MyController {
-	@GetMapping("/myHello")
+	@GetMapping("/hello.html")
 	public String hello(Model model, @RequestParam(value = "name", defaultValue = "World") String name) {
 		var tasks = Arrays.asList("a", "b", "c", "d", "e", "f", "g");
 		
