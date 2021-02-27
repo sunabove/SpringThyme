@@ -5,12 +5,24 @@
 <title>My Spring Project</title>
 </head>
 <body>
-	<h1>Hello, World 2</h1>
-	<h1 th:text="'Hello, ' + ${myData}">Hello, World</h1>
-	<h1 th:text="'Hello, ' + ${name}">Hello, World</h1>
+	<h1 th:if="${ false }" >Hello, World!</h1>
+	<h1 th:text="'Abc, ' + ${myData}">Hello, World</h1>
+	<h1 th:text="'Def, ' + ${name}">Hello, World</h1>
 	
 	<ol>
-        <li th:each="task : ${tasks}" th:text="${task}"></li>
-    </ol>
+		<li th:each="task : ${tasks}" th:text="${task}"></li>
+	</ol>
+	
+	<select th:if="${ 2 == 2 }" >
+		<option 
+		    th:each="task : ${tasks}" 
+		    th:text="${task + task + task }"
+		    
+			th:value="${ task }" 
+			th:selected="${ task == 'b'}" 
+		>
+			A
+		</option>
+	</select>
 </body>
 </html>

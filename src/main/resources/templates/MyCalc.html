@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="ko" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="UTF-8">
+<title>연산 프로그램</title>
+<!-- Latest compiled and minified CSS -->
+<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/css/bootstrap.min.css">
+<!-- jQuery library -->
+<script src="https://ajax.googleapis.com/ajax/libs/jquery/3.5.1/jquery.min.js"></script>
+<!-- Latest compiled JavaScript -->
+<script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.4.1/js/bootstrap.min.js"></script>
+</head>
+<body>
+	<h1>&nbsp;연산 프로그램</h1>
+	
+	<div th:if="${errMsg!=''}" class="alert alert-danger">
+  		<strong th:text="${errMsg}"> </strong> 
+	</div>
+
+	<form class="form-inline">
+		&nbsp;
+		<input type="number" name="a" class="form-control" style="text-align:right;" th:value="${myCalc.a}" /> 
+		<select name="op" class="form-control">
+			<option th:each="op : ${opList}" th:text="${op}" th:value="${ op }" th:selected="${ op == myCalc.op }">A</option>
+		</select> 
+		<input type="number" name="b" class="form-control" style="text-align:right;" th:value="${myCalc.b}" /> 
+		&nbsp; = &nbsp; 
+		<input type="number" name=""  class="form-control" style="text-align:right;" th:value="${myCalc.c}" readonly /> 
+		
+		<input type="submit" value="계산하기 "class="btn btn-default"/>
+	</form>
+	
+
+</body>
+</html>
