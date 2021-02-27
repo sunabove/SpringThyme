@@ -1,8 +1,11 @@
 package com.example.demo;
 
-import java.util.Date;
-
 import javax.persistence.*;
+
+enum Gender {
+    MALE, 
+    FEMALE
+}
 
 @Entity
 @Table(name="STUDENT")
