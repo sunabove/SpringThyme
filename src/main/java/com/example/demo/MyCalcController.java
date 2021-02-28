@@ -17,6 +17,8 @@ public class MyCalcController {
 	@GetMapping("/myCalc.html")
 	public String myCalcModel(Model model, @ModelAttribute MyCalc myCalc) {
 		
+		log.info( "Hello....");
+		
 		String errMsg = "";
 		var opList = java.util.Arrays.asList("+", "-", "*", "/");
 		
