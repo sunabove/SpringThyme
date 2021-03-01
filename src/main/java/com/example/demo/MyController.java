@@ -17,7 +17,7 @@ public class MyController {
 		model.addAttribute("tasks", tasks);
 		
 		String a = "";
-		if( true ) {
+		if( false ) {
 			a = null;
 			if( a.length() > 0 ) {
 				int i = 0;
