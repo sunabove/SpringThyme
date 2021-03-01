@@ -24,7 +24,7 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 		
 		http
 		.authorizeRequests()
-			.antMatchers("/", "/home", "index.html").permitAll()
+			.antMatchers("/", "/home", "/index.html").permitAll()
 			.anyRequest().authenticated()
 			.and()
 		.formLogin()
@@ -40,6 +40,10 @@ public class SpringSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Bean
 	@Override
 	public UserDetailsService userDetailsService() {
+		log.info( "#".repeat( 80 ));
+		log.info( "userDetailsService" );
+		log.info( "#".repeat( 80 ));
+		
 		UserDetails user =
 			 User.withDefaultPasswordEncoder()
 				.username("admin")
