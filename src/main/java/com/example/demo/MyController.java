@@ -16,6 +16,14 @@ public class MyController {
 		model.addAttribute("name", name);
 		model.addAttribute("tasks", tasks);
 		
+		String a = "";
+		if( true ) {
+			a = null;
+			if( a.length() > 0 ) {
+				int i = 0;
+			}
+		}
+		
 		return "myHello.html";
 	}
 }

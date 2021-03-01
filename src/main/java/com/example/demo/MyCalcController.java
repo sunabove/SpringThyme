@@ -56,13 +56,15 @@ public class MyCalcController {
 		
 		myCalcs = repository.findAllByOrderByIdDesc();
 		
-		MyCalc myCalcLatest = null;
+		MyCalc myCalcLast = null;
 		
 		if( null != myCalcs && 0 < myCalcs.size() ) { 
-			myCalcLatest = myCalcs.get( 0 );		
+			myCalcLast = myCalcs.get( 0 );		
 		}
 		
-		System.out.println( "myCalcLatest = " + myCalcLatest ); 
+		System.out.println( "#".repeat(80 ));
+		System.out.println( "myCalcLast = " + myCalcLast ); 
+		System.out.println( "#".repeat(80 ));
 		
 		repository.save( myCalc ); 
 		
